@@ -20,8 +20,7 @@ class ReviewForm(forms.Form):
         widget=forms.TextInput(
             attrs={
                 'class': 'form-control mb-3',
-                'placeholder': 'E-mail',
-                'id': 'form-email'
+                'placeholder': 'E-mail','id': 'form-email'
             }
         )
     )
@@ -36,8 +35,8 @@ class ReviewForm(forms.Form):
     )
 
     def send_email(self):
-            send_review_email_task.delay(
-                self.cleaned_data['name'],
-                self.cleaned_data['email'],
-                self.cleaned_data['review']
-            )
+        send_review_email_task.delay(
+            self.cleaned_data['name'],
+            self.cleaned_data['email'],
+            self.cleaned_data['review']
+        )

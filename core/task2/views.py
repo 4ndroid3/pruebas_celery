@@ -11,4 +11,3 @@ class ReviewEmailView(FormView):
         form.send_email()
         msg = "Thanks for the review!"
         return HttpResponse(msg)
-        
